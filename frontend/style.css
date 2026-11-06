@@ -1,0 +1,539 @@
+
+/* Remove default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+/* Main application layout */
+.app-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    flex-shrink: 0;
+
+    background-color: #111827;
+    padding: 25px 20px;
+    border-right: 1px solid #263244;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+}
+
+/* Sidebar header */
+.sidebar-header {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Application name */
+.app-logo {
+    font-size: 20px;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+/* New Chat button */
+.new-chat-btn {
+    width: 100%;
+    padding: 12px;
+
+    background-color: #6366f1;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.new-chat-btn:hover {
+    background-color: #4f46e5;
+}
+
+/* Uploaded documents section */
+.documents-section {
+    margin-top: 40px;
+}
+
+/* Section heading */
+.documents-section h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #94a3b8;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+/* Document list */
+#document-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Empty document message */
+#document-list p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* Main chat area */
+.chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+    min-height: 0;
+    overflow: hidden;
+
+    padding: 25px 40px;
+}
+
+/* Chat header */
+.chat-header {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #263244;
+}
+
+/* Main heading */
+.chat-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+
+/* Header description */
+.chat-header p {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-top: 8px;
+}
+
+/* Chat messages area */
+/* Chat messages area */
+.chat-messages {
+    flex: 1;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    gap: 16px;
+    padding: 25px 10px;
+
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+/* Welcome message */
+.welcome-message {
+    text-align: center;
+    max-width: 550px;
+    padding: 30px;
+}
+
+/* Welcome heading */
+.welcome-message h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 15px;
+}
+
+/* Welcome description */
+.welcome-message p {
+    font-size: 15px;
+    color: #94a3b8;
+    line-height: 1.7;
+}
+
+/* Question input area */
+.chat-input-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 15px;
+    background-color: #1e293b;
+
+    border: 1px solid #334155;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+/* Upload button */
+.upload-btn {
+    padding: 10px 14px;
+
+    background-color: #334155;
+    color: #e2e8f0;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: background-color 0.3s ease;
+}
+
+/* Upload button hover */
+.upload-btn:hover {
+    background-color: #475569;
+}
+
+/* Question text area */
+.chat-input-area textarea {
+    flex: 1;
+
+    background: transparent;
+    color: white;
+
+    border: none;
+    outline: none;
+
+    resize: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 10px;
+}
+
+/* Placeholder text */
+.chat-input-area textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* Send button */
+#send-btn {
+    padding: 11px 20px;
+
+    background-color: #6366f1;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Send button hover */
+#send-btn:hover {
+    background-color: #4f46e5;
+}
+
+/* Question box focus effect */
+.chat-input-area:focus-within {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+}
+
+/* Custom scrollbar */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: #475569;
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* User chat message */
+.user {
+    align-self: flex-end;
+
+    max-width: 75%;
+    padding: 14px 20px;
+
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: #ffffff;
+
+    border-radius: 16px 16px 4px 16px;
+
+    margin-bottom: 5px;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.welcome-message {
+    align-self: center;
+}
+.document-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 10px;
+
+    background-color: #1e293b;
+    border-radius: 8px;
+
+    font-size: 13px;
+    color: #e2e8f0;
+}
+
+.document-item span {
+    overflow-wrap: anywhere;
+}
+
+.remove-file-btn {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+
+    color: #94a3b8;
+    font-size: 15px;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.remove-file-btn:hover {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+}
+
+
+/* Document item layout */
+
+.document-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+
+/* Common document status badge */
+.document-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+/* Uploading badge */
+.status-uploading {
+    color: #fbbf24;
+    background-color: rgba(251, 191, 36, 0.12);
+    border: 1px solid rgba(251, 191, 36, 0.25);
+}
+
+/* Ready badge */
+.status-ready {
+    color: #4ade80;
+    background-color: rgba(74, 222, 128, 0.12);
+    border: 1px solid rgba(74, 222, 128, 0.25);
+}
+
+/* Failed badge */
+.status-failed {
+    color: #f87171;
+    background-color: rgba(248, 113, 113, 0.12);
+    border: 1px solid rgba(248, 113, 113, 0.25);
+}
+
+
+/* Disabled remove button */
+
+.remove-file-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* AI assistant message */
+.assistant {
+    align-self: flex-start;
+
+    max-width: 80%;
+    padding: 15px 20px;
+
+    background-color: #1e293b;
+    color: #e2e8f0;
+
+    border: 1px solid #334155;
+    border-radius: 12px;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+/* AI typing card */
+.typing-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 24px;
+
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+/* Typing heading */
+.typing-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    color: #e2e8f0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* Robot icon */
+.typing-icon {
+    font-size: 24px;
+}
+
+/* Three dots container */
+.typing-dots {
+    display: flex;
+    gap: 14px;
+}
+
+/* Individual dots */
+.typing-dots span {
+    width: 16px;
+    height: 16px;
+
+    background-color: #a5b4fc;
+    border-radius: 50%;
+
+    animation: typing 1.2s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Dot animation */
+@keyframes typing {
+    0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+
+    30% {
+        transform: translateY(-7px);
+        opacity: 1;
+    }
+}
+
+
+/* Markdown table styling */
+
+.assistant table {
+    width: 100%;
+    border: 1px solid #51416f;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    table-layout: auto;
+}
+
+/* Header and body cells */
+
+.assistant th,
+.assistant td {
+    border: 1px solid #475569;
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+    min-width: 110px;
+    white-space: normal;
+}
+
+/* Purple header */
+
+.assistant th {
+    background-color: #51416f;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Table body */
+
+.assistant td {
+    background-color: #1e293b;
+    color: #e2e8f0;
+}
+
+/* Keep all body rows uniform */
+
+.assistant tbody tr:nth-child(even) td {
+    background-color: #1e293b;
+}

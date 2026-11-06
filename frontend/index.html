@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Multimodal RAG Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+                <h2>📄 Multimodal RAG</h2>
+
+                <button type="button" class="new-chat-btn">
+                    + New Chat
+                </button>
+            </div>
+
+            <!-- Uploaded Documents Section -->
+            <section class="documents-section">
+
+                <h3>Uploaded Documents</h3>
+
+                <div id="document-list">
+                    <p>No documents uploaded yet.</p>
+                </div>
+
+            </section>
+
+        </aside>
+
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+
+            <!-- Chat Header -->
+            <header class="chat-header">
+                <h1>Multimodal RAG Assistant</h1>
+                <p>Ask questions about your uploaded documents.</p>
+            </header>
+
+
+            <!-- Conversation Area -->
+            <section class="chat-messages" id="chat-messages">
+
+                <div class="welcome-message">
+                    <h2>Welcome! 👋</h2>
+
+                    <p>
+                        Upload a document and start asking questions.
+                        I'll help you find answers from your documents.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- Question Input Area -->
+            <form class="chat-input-area" id="chat-form">
+
+                <label for="file-upload" class="upload-btn">
+                    📎 Upload
+                </label>
+
+                <input
+                    type="file"
+                    id="file-upload"
+                    accept=".pdf,application/pdf"
+                    hidden
+                >
+
+                <textarea
+                    id="user-question"
+                    placeholder="Ask something about your documents..."
+                    rows="1"
+                ></textarea>
+
+                <button type="submit" id="send-btn">
+                    Send
+                </button>
+
+            </form>
+
+        </main>
+
+    </div>
+
+    	<!-- Markdown renderer -->
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+	<!-- HTML sanitizer -->
+	<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+
+	<!-- Our JavaScript -->
+	<script src="script.js"></script>
+
+</body>
+
+
+</html>
